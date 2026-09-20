@@ -13,7 +13,7 @@ if obj_player.state != 54
             draw_sprite_ext(spr_pepinoHUDknight, -1, 125, 100, 1, 1, 1, c_white, alpha);
         else if (obj_player.sprite_index == spr_bombpep_end)
             draw_sprite_ext(spr_pepinoHUDbombend, -1, 125, 100, 1, 1, 1, c_white, alpha);
-        else if (instance_exists(obj_itspizzatime) || obj_player.sprite_index == spr_bombpep_intro || obj_player.sprite_index == spr_bombpep_runabouttoexplode || obj_player.sprite_index == spr_bombpep_run || obj_player.sprite_index == spr_player_fireass)
+        else if (instance_exists(obj_itspizzatime) || obj_player.sprite_index == spr_bombpep_runabouttoexplode || obj_player.sprite_index == spr_bombpep_run || obj_player.sprite_index == spr_player_fireass)
             draw_sprite_ext(spr_pepinoHUDscream, -1, 125, 100, 1, 1, 1, c_white, alpha);
         else if (obj_player.state == 91 || (obj_player.state == 76 && shake_mag > 0))
             draw_sprite_ext(spr_pepinoHUDstun, -1, 125, 100, 1, 1, 1, c_white, alpha);
@@ -37,7 +37,7 @@ if obj_player.state != 54
             draw_sprite_ext(spr_pepinoHUD3hp, -1, 125, 100, 1, 1, 1, c_white, alpha);
         else if (obj_player.sprite_index == spr_player_hurtidle || obj_player.sprite_index == spr_player_hurtwalk)
             draw_sprite_ext(spr_pepinoHUD1hp, -1, 125, 100, 1, 1, 1, c_white, alpha);
-        else if (global.panic == 1 || global.snickchallenge == 1)
+        else if (global.panic == 1 || global.snickchallenge == 1 || obj_player.sprite_index == spr_bombpep_intro || obj_player.sprite_index == spr_player_fireassground)
             draw_sprite_ext(spr_pepinoHUDpanic, -1, 125, 100, 1, 1, 1, c_white, alpha);
         else if (obj_player.sprite_index == spr_shotgun_pullout)
             draw_sprite_ext(spr_pepinoHUDmenacing, -1, 125, 100, 1, 1, 1, c_white, alpha);

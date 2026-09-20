@@ -58,6 +58,11 @@ function scr_player_Sjump()
 	
 	if (key_attack2)
 	{
+		move = key_left + key_right;
+		
+		if (move != 0)
+			xscale = move;
+			
 	    movespeed = 12;
 	    machhitAnim = 0;
 	    state = 89;

@@ -1,5 +1,8 @@
 function scr_player_freefallprep()
 {
+	if (global.fun = true)
+		state = 73;
+		
 	move = key_left + key_right;
 	
 	if (!grounded)

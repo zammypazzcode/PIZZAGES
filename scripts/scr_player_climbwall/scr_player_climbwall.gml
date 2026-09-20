@@ -6,6 +6,7 @@ function scr_player_climbwall()
 	move = key_left + key_right;
 	suplexmove = 0;
 	vsp = -wallspeed;
+	wallspeed = movespeed;
 	
 	if (wallspeed < 24 && move == xscale)
 	    wallspeed += 0.05;
@@ -32,6 +33,23 @@ function scr_player_climbwall()
 	{
 	    instance_create(x, y, obj_jumpdust);
 	    vsp = 0;
+		
+		x += xscale;
+		var yy = y;
+			
+		for (var i = 0; i < 32; i++)
+		{
+			if (scr_solid(x, yy + 1))
+			{
+				y = yy;
+				break;
+			}
+			
+			yy++;
+		}
+		
+		movespeed = wallspeed;
+		hsp = xscale * movespeed;
 	    
 	    if (movespeed >= 8)
 	        state = 69;

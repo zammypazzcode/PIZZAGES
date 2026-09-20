@@ -1,5 +1,8 @@
 function scr_player_mach2()
 {
+	if (global.fun = true)
+		movespeed = 24;
+		
 	if (character == "P")
 	{
 	    if (windingAnim < 2000)

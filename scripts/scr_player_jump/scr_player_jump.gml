@@ -141,13 +141,19 @@ function scr_player_jump()
 	        sprite_index = spr_stomp;
 	}
 	
-	if (key_down)
+	if (key_down2)
 	{
 	    if (shotgunAnim == 0)
 	    {
 	        image_index = 0;
 	        state = 90;
-	        sprite_index = spr_bodyslamstart;
+			
+			if (global.fun = true) {
+				sprite_index = spr_bodyslamfall;
+			} else {
+				sprite_index = spr_bodyslamstart;
+			}
+			
 	        vsp = -5;
 	    }
 	    else

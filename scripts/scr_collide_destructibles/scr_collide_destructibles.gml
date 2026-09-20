@@ -59,13 +59,6 @@ function scr_collide_destructibles()
 	            {
 	                if (place_meeting(x, y + vsp + 2, obj_bigdestructibles))
 	                {
-	                    if (shotgunAnim == 0)
-	                        sprite_index = spr_bodyslamland;
-	                    else
-	                        sprite_index = spr_player_shotgunjump2;
-	                    
-	                    state = 76;
-	                    image_index = 0;
 	                }
 	            }
 	            
@@ -91,37 +84,7 @@ function scr_collide_destructibles()
 	        {
 	            with (obj_player)
 	            {
-	                if (place_meeting(x + hsp, y, obj_bigdestructibles))
-	                {
-	                    if (shotgunAnim == 0)
-	                    {
-	                        sprite_index = choose(spr_player_suplexmash1, spr_player_suplexmash2, spr_player_suplexmash3, spr_player_suplexmash4, spr_player_suplexmash5, spr_player_suplexmash6, spr_player_suplexmash7);
-	                        image_index = 0;
-	                        state = 56;
-	                        movespeed = 3;
-	                        vsp = -3;
-	                        instance_destroy(other.id);
-	                    }
-	                    else
-	                    {
-	                        state = 37;
-	                        image_index = 0;
-	                        sprite_index = spr_player_shotgun;
-	                        instance_create(x + (image_xscale * 20), y + 20, obj_shotgunbullet);
-	                        
-	                        with (instance_create(x + (image_xscale * 20), y + 20, obj_shotgunbullet))
-	                            spdh = 4;
-	                        
-	                        with (instance_create(x + (image_xscale * 20), y + 20, obj_shotgunbullet))
-	                            spdh = -4;
-	                        
-	                        instance_destroy(other.id);
-	                    }
-	                }
-	                else if (other.object_index != obj_bigdestructibles)
-	                {
-	                    instance_destroy(other.id);
-	                }
+					instance_destroy(other.id);
 	            }
 	        }
 	    }

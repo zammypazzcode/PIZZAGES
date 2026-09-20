@@ -304,7 +304,7 @@ function scr_player_normal()
 	    image_speed = 0.35;
 	}
 	
-	if (key_slap2 && character == "P" && !(shotgunAnim == 1 && key_up))
+	if (key_slap2 && character == "P" && !(shotgunAnim == 1 && key_up) || key_slap2 && character == "P" && !(shotgunAnim == 1 && key_up) && key_attack2)
 	{
 	    suplexmove = 1;
 	    scr_soundeffect(sfx_suplexdash);
@@ -349,11 +349,19 @@ function scr_player_normal()
 	
 	if (key_attack && !place_meeting(x + xscale, y, obj_solid) && character == "P")
 	{
-	    movespeed = 6;
-	    sprite_index = spr_mach1;
-	    jumpAnim = 1;
-	    state = 68;
-	    image_index = 0;
+		if (global.fun = true) {
+			movespeed = 30;
+			state = 89;
+			image_index = 0;
+		}
+		else
+		{
+			movespeed = 6;
+			sprite_index = spr_mach1;
+			jumpAnim = 1;
+			state = 68;
+			image_index = 0;
+		}
 	}
 	
 	if (character == "S" && move != 0 && !place_meeting(x + xscale, y, obj_solid))

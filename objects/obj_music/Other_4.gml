@@ -129,7 +129,7 @@ if (global.panic == 0 && global.snickchallenge == 0)
         }
     }
     
-    if (string_letters(roomname) == "medievalsecret" || string_letters(roomname) == "ruinsecret" || string_letters(roomname) == "dungeonsecret")
+    if (string_letters(roomname) == "medievalsecret")
     {
         if (!audio_is_playing(mu_secret))
         {
@@ -137,6 +137,26 @@ if (global.panic == 0 && global.snickchallenge == 0)
             scr_sound(mu_secret);
             audio_sound_set_track_position(global.music, fadeoff);
             pausedmusic = mu_secret;
+        }
+    }
+    if (string_letters(roomname) == "ruinsecret")
+    {
+        if (!audio_is_playing(mu_ruinsecret))
+        {
+            audio_stop_all();
+            scr_sound(mu_ruinsecret);
+            audio_sound_set_track_position(global.music, fadeoff);
+            pausedmusic = mu_ruinsecret;
+        }
+    }
+    if (string_letters(roomname) == "dungeonsecret")
+    {
+        if (!audio_is_playing(mu_dungeonsecret))
+        {
+            audio_stop_all();
+            scr_sound(mu_dungeonsecret);
+            audio_sound_set_track_position(global.music, fadeoff);
+            pausedmusic = mu_dungeonsecret;
         }
     }
 }

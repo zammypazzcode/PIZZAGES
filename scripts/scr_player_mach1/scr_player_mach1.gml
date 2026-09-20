@@ -1,5 +1,8 @@
 function scr_player_mach1()
 {
+	if (global.fun = true)
+		movespeed = 24;
+	
 	dir = xscale;
 	move = key_left + key_right;
 	landAnim = 0;
@@ -97,13 +100,6 @@ function scr_player_mach1()
 	        image_xscale = other.xscale;
 	}
 	
-	if (key_slap2 && key_down)
-	{
-	    image_index = 0;
-	    state = 90;
-	    vsp = -4;
-	}
-	
 	if (grounded && sprite_index != spr_mach1 && vsp > 0)
 	{
 	    sprite_index = spr_mach1;
@@ -177,5 +173,19 @@ function scr_player_mach1()
 	    image_index = random_range(0, sprite_get_number(spr_taunt) - 1);
 	    sprite_index = spr_taunt;
 	    instance_create(x, y, obj_taunteffect);
+	}
+	
+	if ((!grounded && place_meeting(x + hsp, y, obj_solid) && !place_meeting(x + hsp, y, obj_destructibles) && !place_meeting(x + sign(hsp), y, obj_slope)) || (grounded && place_meeting(x + hsp, y - 64, obj_solid) && !place_meeting(x + hsp, y, obj_destructibles) && !place_meeting(x + hsp, y, obj_metalblock) && place_meeting(x, y + 1, obj_slope)))
+	{
+	    wallspeed = movespeed;
+	    state = 16;
+	}
+	
+	if (key_down && !place_meeting(x, y, obj_dashpad))
+	{
+	    instance_create(x, y, obj_jumpdust);
+	    flash = 0;
+	    state = 36;
+	    vsp = 10;
 	}
 }

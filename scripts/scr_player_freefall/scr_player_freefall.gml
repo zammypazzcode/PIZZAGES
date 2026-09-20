@@ -2,6 +2,11 @@ function scr_player_freefall()
 {
 	landAnim = 1;
 	vsp = 15;
+	
+	if (global.fun = true)
+		vsp = 40;
+		freefallsmash = 90;
+	
 	move = key_left + key_right;
 	
 	if (!grounded)
@@ -54,38 +59,70 @@ function scr_player_freefall()
 	
 	if (grounded && !(input_buffer_jump < 8) && !place_meeting(x, y + 1, obj_destructibles))
 	{
-	    scr_soundeffect(sfx_groundpound);
-	    freefallsmash = 0;
+		scr_soundeffect(sfx_groundpound);
+		if (global.fun = true && !place_meeting(x, y + 2, obj_metalblock)) {
+		    freefallsmash = 0;
+		    if (shotgunAnim == 0)
+		        sprite_index = spr_bodyslamland;
+		    else
+		        sprite_index = spr_player_shotgunjump2;
 	    
-	    if (shotgunAnim == 0)
-	        sprite_index = spr_bodyslamland;
-	    else
-	        sprite_index = spr_player_shotgunjump2;
+		    image_index = 0;
+		    state = 76;
+		    jumpAnim = 1;
+		    jumpstop = 0;
 	    
-	    image_index = 0;
-	    state = 76;
-	    jumpAnim = 1;
-	    jumpstop = 0;
+		    with (obj_baddie)
+		    {
+		        if (grounded && point_in_rectangle(x, y, __view_get(0, 0), __view_get(1, 0), __view_get(0, 0) + __view_get(2, 0), __view_get(1, 0) + __view_get(3, 0)))
+		        {
+		            vsp = -11;
+		            hsp = 0;
+		        }
+		    }
 	    
-	    with (obj_baddie)
-	    {
-	        if (grounded && point_in_rectangle(x, y, __view_get(0, 0), __view_get(1, 0), __view_get(0, 0) + __view_get(2, 0), __view_get(1, 0) + __view_get(3, 0)))
-	        {
-	            vsp = -11;
-	            hsp = 0;
-	        }
-	    }
+		    with (obj_camera)
+		    {
+		        shake_mag = 10;
+		        shake_mag_acc = 30 / room_speed;
+		    }
 	    
-	    with (obj_camera)
-	    {
-	        shake_mag = 10;
-	        shake_mag_acc = 30 / room_speed;
-	    }
+		    combo = 0;
+		    bounce = 0;
+		    instance_create(x, y, obj_landcloud);
+			freefallstart = 0;
+		} else {
+		    freefallsmash = 0;
+		    if (shotgunAnim == 0)
+		        sprite_index = spr_bodyslamland;
+		    else
+		        sprite_index = spr_player_shotgunjump2;
 	    
-	    combo = 0;
-	    bounce = 0;
-	    instance_create(x, y, obj_landcloud);
-	    freefallstart = 0;
+		    image_index = 0;
+		    state = 76;
+		    jumpAnim = 1;
+		    jumpstop = 0;
+	    
+		    with (obj_baddie)
+		    {
+		        if (grounded && point_in_rectangle(x, y, __view_get(0, 0), __view_get(1, 0), __view_get(0, 0) + __view_get(2, 0), __view_get(1, 0) + __view_get(3, 0)))
+		        {
+		            vsp = -11;
+		            hsp = 0;
+		        }
+		    }
+	    
+		    with (obj_camera)
+		    {
+		        shake_mag = 10;
+		        shake_mag_acc = 30 / room_speed;
+		    }
+	    
+		    combo = 0;
+		    bounce = 0;
+		    instance_create(x, y, obj_landcloud);
+			freefallstart = 0;
+		}
 	}
 	
 	image_speed = 0.35;

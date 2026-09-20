@@ -16,13 +16,13 @@ function scr_player_ladder()
 	if (key_up)
 	{
 	    sprite_index = spr_laddermove;
-	    vsp = -2;
+	    vsp = -6;
 	    image_speed = 0.35;
 	}
 	else if (key_down)
 	{
 	    sprite_index = spr_ladderdown;
-	    vsp = 6;
+	    vsp = 10;
 	    image_speed = -0.35;
 	}
 	else
