@@ -8,10 +8,15 @@ function scr_player_handstandjump()
 	    momemtum = 1;
 	    dir = xscale;
 	    
-	    if (movespeed < 10 && grounded)
-	        movespeed += 0.5;
-	    else if (!grounded)
-	        movespeed = 10;
+		if (global.fun = false) {
+			if (movespeed < 10 && grounded) {
+				movespeed += 0.5;
+			} else {
+				movespeed = 10;
+			}
+		} else {
+			movespeed += 1;
+		}	
 	    
 	    if (!key_jump2 && jumpstop == 0 && vsp < 0.5 && stompAnim == 0)
 	    {

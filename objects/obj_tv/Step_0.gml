@@ -68,7 +68,7 @@ else if (!(room == rank_room || room == timesuproom || room == boss_room1 || roo
 if (instance_exists(obj_itspizzatime))
 {
     image_speed = 0.25;
-    message = "GET TO THE EXIT!!";
+    message = "GET OUT!!!";
     alarm[0] = 200;
     showtext = 1;
     tvsprite = spr_tvexit;
@@ -135,7 +135,7 @@ else if (global.hurtcounter >= global.hurtmilestone && obj_player.character == "
     if obj_player.character == "P"
         character = "PEPPINO";
     else
-        character = "THE NOISE";
+        character = "SNICK";
     
     message = "YOU HAVE HURT " + string(character) + " " + string(global.hurtmilestone) + " TIMES...";
     
@@ -188,19 +188,19 @@ else if (room == Realtitlescreen)
         if (obj_mainmenuselect.optionselected == 0)
         {
             showtext = 1;
-            message = "START GAME";
+            message = "START THE GAME";
         }
         
         if (obj_mainmenuselect.optionselected == 1)
         {
             showtext = 1;
-            message = "OPTION";
+            message = "OPTIONS";
         }
         
         if (obj_mainmenuselect.optionselected == 2)
         {
             showtext = 1;
-            message = "ERASE DATA";
+            message = "ERASE YOUR DATA";
         }
     }
     else
@@ -213,7 +213,7 @@ else if (room == Realtitlescreen)
 if (obj_player.state == 55)
 {
     showtext = 1;
-    message = "GOT THE KEY!";
+    message = "YOU GOT THE KEY!";
     alarm[0] = 50;
 }
 

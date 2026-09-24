@@ -5,7 +5,7 @@ uniform float time;
 uniform float panic;
 
 //DDP You can change these values to tweak how intense the background is
-#define WAVELENGTH 48.0
+#define WAVELENGTH 64.0
 #define AMPLITUDE 0.005
 #define TINTAMOUNT 0.5
 #define TINTSPEED 2.0

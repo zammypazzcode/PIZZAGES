@@ -2,14 +2,14 @@ with (obj_tv)
 {
     if (other.sprite_index == bg_SAGEsnickshotgun)
     {
-        message = "BUY ALL THE SHOTGUN IN SNICK CHALLENGE";
+        message = "BUY ALL THE SHOTGUNS IN SNICK CHALLENGE";
         showtext = 1;
         alarm[0] = 2;
     }
     
     if (other.sprite_index == bg_SAGEdungeonbackup)
     {
-        message = "FINISH DUNGEON WITH A BACKUP SHOTGUN";
+        message = "FINISH BLOODSAUCE DUNGEON WITH A BACKUP SHOTGUN";
         showtext = 1;
         alarm[0] = 2;
     }
@@ -44,14 +44,14 @@ with (obj_tv)
     
     if (other.sprite_index == bg_SAGEknight)
     {
-        message = "FINISH PIZZASCAPE WITHOUT KNIGHT FORM";
+        message = "FINISH PIZZASCAPE WITHOUT THE KNIGHT TRANSFORMATION";
         showtext = 1;
         alarm[0] = 2;
     }
     
     if (other.sprite_index == bg_SAGEtoppin)
     {
-        message = "FIND ALL THE TOPPIN";
+        message = "FIND ALL THE TOPPINS";
         showtext = 1;
         alarm[0] = 2;
     }

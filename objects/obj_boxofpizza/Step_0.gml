@@ -21,25 +21,26 @@ with (obj_player)
             
             sprite_index = spr_downpizzabox;
             image_index = 0;
-            state = 77;
-        }
-    }
+			state = 77;
+		}
+     }
+ }
     
-    if (other.image_yscale == -1)
+if (other.image_yscale == -1)
+{
+	if (((key_up && !place_meeting(x, y - 1, obj_destructibles) && place_meeting(x, y - 1, other.id) && (state == 0 || state == 57 || state == 68 || state == 69 || state == 89 || state == 64)) || ((state == 62 || state == 91) && !place_meeting(x, y - 1, obj_destructibles) && place_meeting(x, y - 1, other.id))) && !instance_exists(obj_fadeout) && state != 77 && state != 60)
     {
-        if (((key_up && !place_meeting(x, y - 1, obj_destructibles) && place_meeting(x, y - 1, other.id) && (state == 0 || state == 57 || state == 68 || state == 69 || state == 89 || state == 64)) || ((state == 62 || state == 91) && !place_meeting(x, y - 1, obj_destructibles) && place_meeting(x, y - 1, other.id))) && !instance_exists(obj_fadeout) && state != 77 && state != 60)
-        {
-            scr_soundeffect(sfx_box);
-            other.depth = -10;
-            obj_player1.box = 1;
-            other.depth = -8;
-            mach2 = 0;
-            obj_camera.chargecamera = 0;
-            x = other.x;
-            obj_player1.targetDoor = other.targetDoor;
-            obj_player1.targetRoom = other.targetRoom;
+		scr_soundeffect(sfx_box);
+        other.depth = -10;
+        obj_player1.box = 1;
+        other.depth = -8;
+         mach2 = 0;
+         obj_camera.chargecamera = 0;
+         x = other.x;
+         obj_player1.targetDoor = other.targetDoor;
+         obj_player1.targetRoom = other.targetRoom;
             
-            if (instance_exists(obj_player2))
+         if (instance_exists(obj_player2))
             {
                 obj_player2.targetDoor = other.targetDoor;
                 obj_player2.targetRoom = other.targetRoom;

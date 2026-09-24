@@ -1,6 +1,6 @@
 function scr_collide_destructibles()
 {
-	if (state == 69 || state == 89 || state == 36 || state == 17 || state == 1 || state == 8)
+	if (state == 69 || state == 89 || state == 36 || state == 17 || state == 1 || state == 8 || state == 67)
 	{
 	    if (place_meeting(x + hsp, y, obj_destructibles))
 	    {

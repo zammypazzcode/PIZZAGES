@@ -24,3 +24,5 @@ if (place_meeting(x, y + floor(vsp), obj_null))
 }
 
 y += floor(vsp);
+
+alarm[1] = 5;

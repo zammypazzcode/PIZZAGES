@@ -1,4 +1,4 @@
-image_speed = 0.35;
+image_speed = 0.1;
 
 with (obj_player)
 {
